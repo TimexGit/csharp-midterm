@@ -122,14 +122,14 @@ namespace MidTermSX33
 |------------|---------|----------------|
 | `employeeName` | Stores full names | "John Doe", "Jane Smith" |
 | `employeeID` | Stores unique IDs | "EMP001", "EMP002" |
-| `employeeGender` | Stores gender | "Male", "Female", "Other" |
+| `employeeGender` | Stores gender | "Male", "Female", "M", "F" |
 | `employeePosition` | Stores job titles | "Manager", "Developer" |
 
 **Parallel Arrays Concept:**
 - All arrays share the **same index** for one employee
 - Employee at index 0: `employeeName[0]`, `employeeID[0]`, `employeeGender[0]`, `employeePosition[0]`
 
----
+## Main Menu Loop
 
 ```csharp
             bool isRunning = true;
@@ -138,11 +138,9 @@ namespace MidTermSX33
 - `bool` is the **boolean data type** (can only be `true` or `false`)
 - `isRunning` is a **flag variable** that controls the main loop
 - `= true` initializes it to true, meaning the program should keep running
-- When set to `false`, the while loop would terminate (though this never happens in this code)
+- When set to `false`, the while loop would terminate
 
 ---
-
-## Main Menu Loop
 
 ```csharp
             while (isRunning)
@@ -169,13 +167,12 @@ namespace MidTermSX33
 ---
 
 ```csharp
-                Console.WriteLine($"=======================================");
-                Console.WriteLine($"   Employees Management System (EMS)   ");
-                Console.WriteLine($"=======================================\n");
+                Console.WriteLine("=======================================");
+                Console.WriteLine("   Employees Management System (EMS)   ");
+                Console.WriteLine("=======================================\n");
 ```
 **Line Explanation:**
 - `Console.WriteLine()` **prints text** to the console and moves to a new line
-- `$"..."` is a **string interpolation** prefix (though not used here with variables)
 - The `=` characters create a **visual border/header**
 - `\n` is an **escape sequence** for a newline (adds blank line after header)
 - These lines create the **title banner** of the application
@@ -396,29 +393,18 @@ namespace MidTermSX33
                             Console.ForegroundColor = ConsoleColor.White;
                             Console.WriteLine("\nSuccessfully Added New Employee!");
                             Console.ResetColor();
+
+                            currentEmployeeCount++;
                         }
+                        break;
 ```
 **Line Explanation:**
 - Displays **success message** with green background
 - Green color indicates successful operation (UX convention)
 - `\n` adds newline before the message
-- `}` closes the else block
-
----
-
-```csharp
-                        currentEmployeeCount++;
-                        break;
-```
-**Line Explanation:**
 - `currentEmployeeCount++` is the **increment operator** (adds 1)
-- Equivalent to `currentEmployeeCount = currentEmployeeCount + 1`
-- **BUG ALERT:** This line is **outside** the else block!
-  - The count increments even when capacity is full
-  - This is a logic error in the code
+- `}` closes the else block
 - `break` exits the switch statement
-
----
 
 ## Case 2: Remove Existing Employee
 
@@ -690,13 +676,7 @@ After decreasing count, only first 3 are "visible"
 - Sets **inverted colors** (black text on white background) for visibility
 - `Console.ReadKey()` **pauses** until user presses any key
   - Different from `ReadLine()` - doesn't need Enter key
-  - Returns a `ConsoleKeyInfo` struct (not used here)
 - After key press, loop repeats (back to menu)
-- Final `}` brackets close:
-  1. The while loop
-  2. The Main method
-  3. The Program class
-  4. The namespace
 
 ---
 
@@ -714,22 +694,3 @@ After decreasing count, only first 3 are "visible"
 | **Console Colors** | `Console.BackgroundColor`, `Console.ForegroundColor` |
 
 ---
-
-## Known Bug
-
-⚠️ **Line 87:** `currentEmployeeCount++;` is placed **outside** the else block, causing the counter to increment even when an employee cannot be added due to capacity limits. This should be moved inside the else block.
-
-**Incorrect (current):**
-```csharp
-                        }  // closes else
-
-                        currentEmployeeCount++;  // BUG: runs regardless
-                        break;
-```
-
-**Correct fix:**
-```csharp
-                            currentEmployeeCount++;  // Should be inside else
-                        }  // closes else
-                        break;
-```
