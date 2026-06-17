@@ -40,7 +40,7 @@ namespace MidTermSX33
 ```
 **Line Explanation:**
 - `namespace` is a keyword used to **organize code** and prevent naming conflicts
-- `MidTermSX33` is the **name of the namespace** (likely named after a course assignment)
+- `MidTermSX33` is the **name of the namespace**
 - Namespaces act like containers/folders for related classes
 - Everything between the `{` and `}` following this declaration belongs to this namespace
 
