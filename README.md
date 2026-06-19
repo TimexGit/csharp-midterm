@@ -587,7 +587,7 @@ After decreasing count, only first 3 are "visible"
                         else
                         {
                             Console.WriteLine("--------------------------------------------------------------------------------------");
-                            Console.WriteLine($"| {"#",-5} | {"Full Name",-20} | {"ID",-10} | {"Gender",-15} | {"Position",-20} |");
+                            Console.WriteLine($"| {"#",-5} | {"Full Name",-20} | {"ID",-10} | {"Gender",-10} | {"Position",-25} |");
                             Console.WriteLine("--------------------------------------------------------------------------------------");
 ```
 **Line Explanation:**
@@ -600,8 +600,8 @@ After decreasing count, only first 3 are "visible"
   - # : 5 characters
   - Full Name: 20 characters
   - ID: 10 characters
-  - Gender: 15 characters
-  - Position: 20 characters
+  - Gender: 10 characters
+  - Position: 25 characters
 - Dashes create horizontal lines
 
 ---
@@ -609,7 +609,7 @@ After decreasing count, only first 3 are "visible"
 ```csharp
                             for(int i = 0; i < currentEmployeeCount; i++)
                             {
-                                Console.WriteLine($"| {i + 1,-5} | {employeeName[i],-20} | {employeeID[i],-10} | {employeeGender[i],-15} | {employeePosition[i],-20} |");
+                                Console.WriteLine($"| {i + 1,-5} | {employeeName[i],-20} | {employeeID[i],-10} | {employeeGender[i],-10} | {employeePosition[i],-25} |");
                             }
 ```
 **Line Explanation:**
@@ -620,8 +620,8 @@ After decreasing count, only first 3 are "visible"
 
 **Example Output:**
 ```
-| 1     | John Doe             | EMP001     | Male            | Developer            |
-| 2     | Jane Smith           | EMP002     | Female          | Manager              |
+| 1     | John Doe             | EMP001     | Male       | Developer                 |
+| 2     | Jane Smith           | EMP002     | Female     | Manager                   |
 ```
 
 ---
