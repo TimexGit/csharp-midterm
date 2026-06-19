@@ -33,7 +33,6 @@ namespace MidTermSX33
                 Console.Write("Enter (1-3): ");
 
                 string menuChoice = Console.ReadLine();
-                Console.WriteLine();
 
                 switch (menuChoice)
                 {
