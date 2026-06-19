@@ -154,12 +154,12 @@ namespace MidTermSX33
                         else
                         {
                             Console.WriteLine("--------------------------------------------------------------------------------------");
-                            Console.WriteLine($"| {"#",-5} | {"Full Name",-20} | {"ID",-10} | {"Gender",-15} | {"Position",-20} |");
+                            Console.WriteLine($"| {"#",-5} | {"Full Name",-20} | {"ID",-10} | {"Gender",-10} | {"Position",-25} |");
                             Console.WriteLine("--------------------------------------------------------------------------------------");
 
                             for(int i = 0; i < currentEmployeeCount; i++)
                             {
-                                Console.WriteLine($"| {i + 1,-5} | {employeeName[i],-20} | {employeeID[i],-10} | {employeeGender[i],-15} | {employeePosition[i],-20} |");
+                                Console.WriteLine($"| {i + 1,-5} | {employeeName[i],-20} | {employeeID[i],-10} | {employeeGender[i],-10} | {employeePosition[i],-25} |");
                             }
 
                             Console.WriteLine("--------------------------------------------------------------------------------------");
