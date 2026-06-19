@@ -219,13 +219,11 @@ namespace MidTermSX33
 
 ```csharp
                 string menuChoice = Console.ReadLine();
-                Console.WriteLine();
 ```
 **Line Explanation:**
 - `Console.ReadLine()` **pauses execution** and waits for user input
 - It **returns** the text entered by the user (before pressing Enter)
 - `string menuChoice` stores the user's input as a string
-- `Console.WriteLine()` with no arguments prints a **blank line** for spacing
 
 ---
 
